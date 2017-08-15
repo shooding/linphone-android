@@ -34,8 +34,8 @@ fi
 if nasm -f elf32 2>&1 | grep -q "fatal: unrecognised output format"; then
 	echo_err "Invalid version of nasm: your version does not support elf32 output format. If you have installed nasm, please check that your PATH env variable is set correctly."
 fi
-if ! (find submodules/linphone/mediastreamer2 -mindepth 1 2>/dev/null | grep -q . \
-	|| find submodules/linphone/oRTP -mindepth 1 2>/dev/null | grep -q .); then
+if ! (find submodules/mediastreamer2 -mindepth 1 2>/dev/null | grep -q . \
+	|| find submodules/oRTP -mindepth 1 2>/dev/null | grep -q .); then
 	echo_err "Missing some git submodules. Did you run 'git submodule update --init --recursive'?"
 fi
 # Android NDK should NOT be simlinked!
